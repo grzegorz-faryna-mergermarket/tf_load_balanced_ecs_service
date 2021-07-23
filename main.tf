@@ -25,13 +25,13 @@ resource "aws_ecs_service" "service" {
 }
 
 resource "null_resource" "alb_listener_arn" {
-  triggers {
+  triggers = {
     alb_listener_arn = "${var.alb_listener_arn}"
   }
 }
 
 resource "null_resource" "alb_arn" {
-  triggers {
+  triggers = {
     alb_name = "${var.alb_arn}"
   }
 }
